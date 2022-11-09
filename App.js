@@ -59,6 +59,20 @@ function ExpensesOverview() {
           ),
         }}
       />
+
+<BottomTabs.Screen
+        name="Graphs"
+        component={AllExpenses}
+        options={{
+          title: 'Graphs',
+          tabBarLabel: 'Graphs',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="pie-chart" size={size} color={color} />
+          ),
+        }}
+      />
+
+
     </BottomTabs.Navigator>
   );
 }
