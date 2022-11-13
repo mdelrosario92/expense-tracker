@@ -9,18 +9,24 @@ import Conversor from './views/Conversor';
 import RecentExpenses from './views/RecentExpenses';
 import AllExpenses from './views/AllExpenses';
 import { GlobalStyles } from './constants/styles';
+import IconButton from './components/ExpensesOutput/UI/IconButton';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 function ExpensesOverview() {
   return (
-    <BottomTabs.Navigator screenOptions={{
+    <BottomTabs.Navigator screenOptions={({ navigation }) => ({
       headerStyle: { backgroundColor: GlobalStyles.colors.header },
       headerTintColor: 'white',
       tabBarStyle: { backgroundColor: GlobalStyles.colors.header },
       tabBarActiveTintColor: GlobalStyles.colors.text,
-    }}>
+      headerRight: ({tintColor}) => (
+      <IconButton icon = "add" size = {24} color = {tintColor} onPress = {() => {
+        navigation.navigate('ManageExpense');
+      }}/>
+      ),
+    })}>
 
       <BottomTabs.Screen
         name="Recent"
