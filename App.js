@@ -8,6 +8,7 @@ import ManageExpense from './views/ManageExpense';
 import Conversor from './views/Conversor';
 import RecentExpenses from './views/RecentExpenses';
 import AllExpenses from './views/AllExpenses';
+import Graphs from './views/Graphs';
 import { GlobalStyles } from './constants/styles';
 import IconButton from './components/ExpensesOutput/UI/FloattingButton';
 import { StyleSheet, View, Image } from 'react-native';
@@ -15,6 +16,7 @@ import FloattingButton from './components/ExpensesOutput/UI/FloattingButton';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
+
 
 function ExpensesOverview() {
   return (
@@ -70,7 +72,7 @@ function ExpensesOverview() {
 
 <BottomTabs.Screen
         name="Graphs"
-        component={AllExpenses}
+        component={Graphs}
         options={{
           title: 'Graphs',
           tabBarLabel: 'Graphs',
