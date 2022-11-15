@@ -9,7 +9,9 @@ import Conversor from './views/Conversor';
 import RecentExpenses from './views/RecentExpenses';
 import AllExpenses from './views/AllExpenses';
 import { GlobalStyles } from './constants/styles';
-import IconButton from './components/ExpensesOutput/UI/IconButton';
+import IconButton from './components/ExpensesOutput/UI/FloattingButton';
+import { StyleSheet, View, Image } from 'react-native';
+import FloattingButton from './components/ExpensesOutput/UI/FloattingButton';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -86,17 +88,31 @@ function ExpensesOverview() {
 export default function App() {
   return (
     <>
+    <FloattingButton style = {{bottom: 0}}/>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions ={{
+          headerStyle: { backgroundColor: GlobalStyles.colors.header },
+        }}>
           <Stack.Screen
             name="ExpensesOverview"
             component={ExpensesOverview}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="ManageExpense" component={ManageExpense} />
+          <Stack.Screen name="ManageExpense" component={ManageExpense} 
+          options={{
+            presentation: 'modal'
+          }
+          } />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center'
+  }
+});
