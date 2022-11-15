@@ -8,10 +8,12 @@ import ManageExpense from './views/ManageExpense';
 import Conversor from './views/Conversor';
 import RecentExpenses from './views/RecentExpenses';
 import AllExpenses from './views/AllExpenses';
+import Graphs from './views/Graphs';
 import { GlobalStyles } from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
+
 
 function ExpensesOverview() {
   return (
@@ -62,7 +64,7 @@ function ExpensesOverview() {
 
 <BottomTabs.Screen
         name="Graphs"
-        component={AllExpenses}
+        component={Graphs}
         options={{
           title: 'Graphs',
           tabBarLabel: 'Graphs',
