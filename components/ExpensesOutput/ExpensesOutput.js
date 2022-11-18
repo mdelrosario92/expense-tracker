@@ -3,17 +3,35 @@ import ExpensesList from "./ExpensesList";
 import { StyleSheet, View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
 
-const dummy_test = [{
+var dummy_test = [{
     id: 'e1',
-    description: 'tv',
-    amount: 1000,
-    date: new Date('2022-01-01')
+    description: 'Super',
+    amount: 3720,
+    date: new Date('2022-12-12')
 },
 {
     id: 'e2',
-    description: 'book',
-    amount: 2000,
-    date: new Date('2022-02-01')
+    description: 'Libro',
+    amount: 2150,
+    date: new Date('2022-10-12')
+},
+{
+    id: 'e3',
+    description: 'ORT',
+    amount: 10700,
+    date: new Date('2022-09-12')
+},
+{
+    id: 'e4',
+    description: 'Kiosco',
+    amount: 810,
+    date: new Date('2022-06-12')
+},
+{
+    id: 'e5',
+    description: 'Ropa',
+    amount: 7400,
+    date: new Date('2022-02-12')
 }]
 
 function ExpensesOutput({ expenses, expensesPeriod }) {
@@ -31,6 +49,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: GlobalStyles.colors.background,
+        backgroundColor: GlobalStyles.colors.background
     }
 });
