@@ -9,9 +9,8 @@ import Conversor from './views/Conversor';
 import RecentExpenses from './views/RecentExpenses';
 import AllExpenses from './views/AllExpenses';
 import { GlobalStyles } from './constants/styles';
-import IconButton from './components/ExpensesOutput/UI/FloattingButton';
-import { StyleSheet, View, Image } from 'react-native';
-import FloattingButton from './components/ExpensesOutput/UI/FloattingButton';
+import { StyleSheet } from 'react-native';
+import AddButton from './components/ExpensesOutput/UI/AddButton';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -24,7 +23,7 @@ function ExpensesOverview() {
       tabBarStyle: { backgroundColor: GlobalStyles.colors.header },
       tabBarActiveTintColor: GlobalStyles.colors.text,
       headerRight: ({tintColor}) => (
-      <IconButton icon = "add" size = {24} color = {tintColor} onPress = {() => {
+      <AddButton icon = "add" size = {24} color = {tintColor} onPress = {() => {
         navigation.navigate('ManageExpense');
       }}/>
       ),
@@ -88,7 +87,6 @@ function ExpensesOverview() {
 export default function App() {
   return (
     <>
-    <FloattingButton style = {{bottom: 0}}/>
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator screenOptions ={{
