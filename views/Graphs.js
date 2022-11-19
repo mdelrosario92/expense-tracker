@@ -1,7 +1,7 @@
-import GraphsOutput from '../components/GraphsOutput/GraphsOutput'
+import GraphsOutput from "../components/GraphsOutput/GraphsOutput";
 
-function Graphs () {
-    return <GraphsOutput></GraphsOutput>
-}
+const Graphs = () => {
+  return <GraphsOutput />;
+};
 
 export default Graphs;
