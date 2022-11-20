@@ -11,6 +11,7 @@ import AllExpenses from './views/AllExpenses';
 import { GlobalStyles } from './constants/styles';
 import { StyleSheet } from 'react-native';
 import AddButton from './components/ExpensesOutput/UI/AddButton';
+import ExpensesContextProvider from './store/expenses-context';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -88,6 +89,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="auto" />
+      <ExpensesContextProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions ={{
           headerStyle: { backgroundColor: GlobalStyles.colors.header },
@@ -104,6 +106,7 @@ export default function App() {
           } />
         </Stack.Navigator>
       </NavigationContainer>
+      </ExpensesContextProvider>
     </>
   );
 }
