@@ -1,19 +1,35 @@
 import { createContext, useReducer } from 'react';
 
-const DUMMY_EXPENSES = [
-  {
-    id: 'e1',
-    description: 'Gasto Demo 1',
-    amount: 100.00,
-    date: new Date('2022-11-18'),
-  },
-  {
-    id: 'e2',
-    description: 'Gasto Demo 2',
-    amount: 89.29,
-    date: new Date('2022-11-17'),
-  },
-];
+const dummy_test = [{
+  id: 'e1',
+  description: 'Super',
+  amount: 3720,
+  date: new Date('2022-12-12')
+},
+{
+  id: 'e2',
+  description: 'Libro',
+  amount: 2150,
+  date: new Date('2022-10-12')
+},
+{
+  id: 'e3',
+  description: 'ORT',
+  amount: 10700,
+  date: new Date('2022-09-12')
+},
+{
+  id: 'e4',
+  description: 'Kiosco',
+  amount: 810,
+  date: new Date('2022-06-12')
+},
+{
+  id: 'e5',
+  description: 'Ropa',
+  amount: 7400,
+  date: new Date('2022-02-12')
+}]
 
 export const ExpensesContext = createContext({
   expenses: [],
