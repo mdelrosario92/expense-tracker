@@ -12,6 +12,7 @@ import { GlobalStyles } from './constants/styles';
 import { StyleSheet } from 'react-native';
 import AddButton from './components/ExpensesOutput/UI/AddButton';
 import ExpensesContextProvider from './store/expenses-context';
+import Graphs from './views/Graphs';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -70,7 +71,7 @@ function ExpensesOverview() {
 
 <BottomTabs.Screen
         name="Graphs"
-        component={AllExpenses}
+        component={Graphs}
         options={{
           title: 'Graphs',
           tabBarLabel: 'Graphs',
