@@ -60,7 +60,7 @@ function expensesReducer(state, action) {
 }
 
 function ExpensesContextProvider({ children }) {
-  const [expensesState, dispatch] = useReducer(expensesReducer, DUMMY_EXPENSES);
+  const [expensesState, dispatch] = useReducer(expensesReducer, dummy_test);
 
   function addExpense(expenseData) {
     dispatch({ type: 'ADD', payload: expenseData });
