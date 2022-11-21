@@ -15,23 +15,33 @@ function ManageExpense({ route, navigation }) {
         });
     }), [navigation, isEditing]
 
-    function deleteExpense() { }
-    function cancelHandler() { }
-    function confirmHandler() { }
+    function deleteExpense() {
+        navigation.goBack();
+     }
 
-    return <View style={styles.container}>
+    function cancelHandler() { 
+        navigation.goBack();
+    }
+
+    function confirmHandler() {
+        navigation.goBack();
+     }
+
+    return (
+    <View style={styles.container}>
      <View style={styles.buttons}>
-            <CommonButton mode="flat" onPress={cancelHandler}>Cancelar</CommonButton>
-            <CommonButton onPress = {confirmHandler}>{isEditing ? 'Update' : 'Add'}</CommonButton>
+            <CommonButton style= {styles.button} mode="flat" onPress={cancelHandler}>Cancelar</CommonButton>
+            <CommonButton onPress={confirmHandler}>{isEditing ? 'Actualizar' : 'Agregar'}</CommonButton>
     </View>
-        {isEditing &&
+        { isEditing &&
             <View style={styles.deleteContainer}><AddButton
                 icon="trash"
                 color='red'
                 size={36}
                 onPress={deleteExpense} />
-            </View>}
-    </View>;
+            </View> }
+    </View>
+    );
 }
 
 export default ManageExpense;
@@ -40,18 +50,22 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: GlobalStyles.colors.background
+        backgroundColor: GlobalStyles.colors.background,
     },
     buttons: {
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+    },
+    button: {
+        mindWidth: 120,
+        marginHorizontal: 8,
     },
     deleteContainer: {
         marginTop: 16,
         paddingTop: 8,
         borderTopWidth: 2,
         borderTopColor: GlobalStyles.colors.filter,
-        alignItems: 'center'
+        alignItems: 'center',
     }
 });
