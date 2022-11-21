@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 15,
         backgroundColor: GlobalStyles.colors.filter,
-        borderRadius: 2,
+        borderRadius: 6,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
