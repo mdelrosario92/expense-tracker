@@ -28,13 +28,13 @@ const styles = StyleSheet.create({
     period: {
         fontSize: 20,
         color: GlobalStyles.colors.text,
-        left:15
+        left: 15
     },
     sum: {
         fontSize: 22,
         fontWeight: 'bold',
         color: GlobalStyles.colors.text,
-        right:15
+        right: 15
 
     }
 });

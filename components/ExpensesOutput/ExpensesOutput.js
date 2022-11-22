@@ -22,15 +22,15 @@ function ExpensesOutput({ expenses, expensesPeriod, fallbackText }) {
 export default ExpensesOutput;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 24,
-        backgroundColor: GlobalStyles.colors.background
-    },
-    infoText: {
-        fontSize: 18,
-        color: GlobalStyles.colors.text,
-        textAlign: 'center',
-        marginTop: 32
-    }
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.background
+  },
+  infoText: {
+    fontSize: 18,
+    color: GlobalStyles.colors.text,
+    textAlign: 'center',
+    marginTop: 32
+  }
 });

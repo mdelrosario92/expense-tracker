@@ -61,9 +61,9 @@ const dummy_test = [
 
 export const ExpensesContext = createContext({
   expenses: [],
-  addExpense: ({ description, amount, date }) => {},
-  deleteExpense: (id) => {},
-  updateExpense: (id, { description, amount, date }) => {},
+  addExpense: ({ description, amount, date }) => { },
+  deleteExpense: (id) => { },
+  updateExpense: (id, { description, amount, date }) => { },
 });
 
 function expensesReducer(state, action) {
