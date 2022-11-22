@@ -61,8 +61,8 @@ function ExpensesOverview() {
         name="Todos"
         component={AllExpenses}
         options={{
-          title: 'Tus gastos',
-          tabBarLabel: 'Todos tus gastos',
+          title: 'Gastos Totales',
+          tabBarLabel: 'Gastos Totales',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" size={size} color={color} />
           ),

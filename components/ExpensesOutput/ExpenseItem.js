@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   expenseItem: {
     padding: 13,
     marginVertical: 8,
-    backgroundColor: GlobalStyles.colors.expenses,
+    backgroundColor: GlobalStyles.colors.header,
     flexDirection: "row",
     justifyContent: "space-between",
     borderRadius: 6,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   amountContainer: {
     paddingHorizontal: 12,
     paddingVertical: 4,
-    backgroundColor: GlobalStyles.colors.expenses,
+    backgroundColor: GlobalStyles.colors.header,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
