@@ -9,7 +9,6 @@ function RecentExpenses() {
   const expensesContext = useContext(ExpensesContext);
 
   const recentExpenses = expensesContext.expenses.filter((expense) => {
-    const expenseDate = new Date(expense.date);
     const today = new Date();
     const date7DaysAgo = getDateMinusDays(today, 7);
 
