@@ -1,5 +1,4 @@
-import { StyleSheet, ScrollView, View, Text, Dimensions } from "react-native";
-import { GlobalStyles } from "../../constants/styles";
+import {  View, Text } from "react-native";
 
 const GraphsLegend = (legends) => {
   const legend = (text, color) => {

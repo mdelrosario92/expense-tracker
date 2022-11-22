@@ -1,8 +1,6 @@
-import { StyleSheet, ScrollView, View, Text, Dimensions } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
-import { BarChart, LineChart, PieChart } from "react-native-gifted-charts";
-import ExpensesSummary from "../ExpensesOutput/ExpensesSummary";
-import GraphsLegend from "./GraphsLegend";
+import { BarChart } from "react-native-gifted-charts";
 import { toMonthName } from "../../util/toMonth";
 /*
 <BarChart data={expensesContext.expenses} />
