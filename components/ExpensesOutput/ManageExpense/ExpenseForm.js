@@ -1,18 +1,29 @@
 import { useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Input from './Input';
+import CommonButton from '../UI/CommonButton';
 
-function ExpenseForm() {
+function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
     const [inputValues, setInputValues] = useState({
-        description: '',
-        amount: '',
-        date: ''
+        amount: defaultValues ? defaultValues.amount.toString() : '',
+        date: defaultValues ? defaultValues.date.toISOString().slice(0,10) : '',
+        description: defaultValues ? defaultValues.description : ''
     });
 
     function inputChangedHandler(inputIdentifier, enteredValue) {
         setInputValues((curInputValues) => {
             return { ...curInputValues, [inputIdentifier]: enteredValue };
         });
+    }
+
+    function submitHandler() {
+        const expenseData = {
+            amount: +inputValues.amount,
+            date: new Date(inputValues.date),
+            description: inputValues.description
+        };
+
+        onSubmit(expenseData);
     }
 
     return (
@@ -25,7 +36,7 @@ function ExpenseForm() {
                     value: inputValues.amount
                 }} />
                 <Input style={styles.rowInput} label="Fecha" textInputConfig={{
-                    placeholder: 'dd/mm/yyyy',
+                    placeholder: 'yyyy-mm-dd',
                     maxLength: 10,
                     onChangeText: inputChangedHandler.bind(this, 'date'),
                     value: inputValues.date
@@ -33,11 +44,15 @@ function ExpenseForm() {
             </View>
             <Input label="Descripción" textInputConfig={{
                 multiline: true,
-                autoCorrect: false,
-                autoCapitalize: 'none',
+                autoCorrect: true,
+                autoCapitalize: 'sentences',
                 onChangeText: inputChangedHandler.bind(this, 'description'),
                 value: inputValues.description
             }} />
+            <View style={styles.buttons}>
+                <CommonButton style={styles.button} mode="flat" onPress={onCancel}>Cancelar</CommonButton>
+                <CommonButton onPress={submitHandler}>{submitButtonLabel}</CommonButton>
+            </View>
         </View>
     );
 }
@@ -61,5 +76,14 @@ const styles = StyleSheet.create({
     },
     rowInput: {
         flex: 1
-    }
+    },
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    button: {
+        mindWidth: 120,
+        marginHorizontal: 20,
+    },
 });

@@ -73,7 +73,7 @@ function ExpensesOverview() {
         component={AllExpenses}
         options={{
           title: 'Estadística',
-          tabBarLabel: 'Estadística',
+          tabBarLabel: 'Graphs',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="pie-chart" size={size} color={color} />
           ),
