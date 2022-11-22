@@ -10,7 +10,7 @@ function AllExpenses() {
     <ExpensesOutput
       expenses={expensesContext.expenses}
       expensesPeriod="Total"
-      fallbackText="No registered expenses found!"
+      fallbackText="Nada para mostrar, agregá algún gasto!"
     />
   );
 }

@@ -26,5 +26,11 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 24,
         backgroundColor: GlobalStyles.colors.background
+    },
+    infoText: {
+        fontSize: 18,
+        color: GlobalStyles.colors.text,
+        textAlign: 'center',
+        marginTop: 32
     }
 });
