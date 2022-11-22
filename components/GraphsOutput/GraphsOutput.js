@@ -15,12 +15,7 @@ function GraphsOutput({ expenses }) {
   }));
   console.log(mapped);
 
-  return (
-    <PieChart
-      data={mapped}
-      donut
-    />
-  );
+  return <PieChart data={mapped} donut />;
 }
 
 export default GraphsOutput;
