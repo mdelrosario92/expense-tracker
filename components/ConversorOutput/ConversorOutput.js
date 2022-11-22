@@ -1,4 +1,4 @@
-import { Text, View, FlatList, StyleSheet } from "react-native";
+import { Text, View, ScrollView, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { GlobalStyles } from "../../constants/styles";
 
@@ -21,7 +21,7 @@ function ConversorOutput({ expenses, expensesPeriod, fallbackText }) {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.containerSummaryt}>
         <Text style={styles.period}>Total en pesos:</Text>
         <View style={styles.amountContainer}>
@@ -88,7 +88,7 @@ function ConversorOutput({ expenses, expensesPeriod, fallbackText }) {
           Cotización a las {cotizaciones.time}
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
