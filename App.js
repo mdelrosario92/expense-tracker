@@ -23,10 +23,10 @@ function ExpensesOverview() {
       headerTintColor: 'white',
       tabBarStyle: { backgroundColor: GlobalStyles.colors.header },
       tabBarActiveTintColor: GlobalStyles.colors.text,
-      headerRight: ({tintColor}) => (
-      <AddButton icon = "add" size = {24} color = {tintColor} onPress = {() => {
-        navigation.navigate('ManageExpense');
-      }}/>
+      headerRight: ({ tintColor }) => (
+        <AddButton icon="add" size={24} color={tintColor} onPress={() => {
+          navigation.navigate('ManageExpense');
+        }} />
       ),
     })}>
 
@@ -34,8 +34,8 @@ function ExpensesOverview() {
         name="Recent"
         component={RecentExpenses}
         options={{
-          title: 'Recent Expenses',
-          tabBarLabel: 'Recent',
+          title: 'Gastos Recientes',
+          tabBarLabel: 'Gastos Recientes',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="time" size={size} color={color} />
           ),
@@ -47,8 +47,8 @@ function ExpensesOverview() {
         name="Convert"
         component={Conversor}
         options={{
-          title: 'Convert',
-          tabBarLabel: 'Convert',
+          title: 'Convertir',
+          tabBarLabel: 'Convertir',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="logo-usd" size={size} color={color} />
           ),
@@ -60,20 +60,20 @@ function ExpensesOverview() {
         name="Todos"
         component={AllExpenses}
         options={{
-          title: 'All Expenses',
-          tabBarLabel: 'All Expenses',
+          title: 'Tus gastos',
+          tabBarLabel: 'Todos tus gastos',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" size={size} color={color} />
           ),
         }}
       />
 
-<BottomTabs.Screen
+      <BottomTabs.Screen
         name="Graphs"
         component={AllExpenses}
         options={{
-          title: 'Graphs',
-          tabBarLabel: 'Graphs',
+          title: 'Estadística',
+          tabBarLabel: 'Estadística',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="pie-chart" size={size} color={color} />
           ),
@@ -90,22 +90,22 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <ExpensesContextProvider>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions ={{
-          headerStyle: { backgroundColor: GlobalStyles.colors.header },
-        }}>
-          <Stack.Screen
-            name="ExpensesOverview"
-            component={ExpensesOverview}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="ManageExpense" component={ManageExpense} 
-          options={{
-            presentation: 'modal'
-          }
-          } />
-        </Stack.Navigator>
-      </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{
+            headerStyle: { backgroundColor: GlobalStyles.colors.header },
+          }}>
+            <Stack.Screen
+              name="ExpensesOverview"
+              component={ExpensesOverview}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen name="ManageExpense" component={ManageExpense}
+              options={{
+                presentation: 'modal'
+              }
+              } />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ExpensesContextProvider>
     </>
   );
